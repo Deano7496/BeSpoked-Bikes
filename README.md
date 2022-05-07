@@ -11,14 +11,14 @@
   <p align="center">
     A basic sales tracking application
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Deano7496/BeSpoked-Bikes/blob/main/README.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://be-spoked-bikes.vercel.app/">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/Deano7496/BeSpoked-Bikes/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/Deano7496/BeSpoked-Bikes/issues">Request Feature</a>
   </p>
 </div>
 
@@ -100,7 +100,7 @@ This is an example of how to list things you need to use the software and how to
 1. Get a free API Key at [http://heroku.com/](http://heroku.com/)
 2. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/Deano7496/BeSpoked-Bikes.git
    ```
 3. Install NPM packages
    ```sh
@@ -127,7 +127,7 @@ This is an example of how to list things you need to use the software and how to
 
 This project is best used for clients who want to keep track of all their data in one database.
 
-_For more examples, please refer to the [Demo](https://example.com)_
+_For more examples, please refer to the [Demo](https://be-spoked-bikes.vercel.app/)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -146,7 +146,7 @@ _For more examples, please refer to the [Demo](https://example.com)_
     - [ ] Guest login
 - [ ] Improve SQL queries
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/Deano7496/BeSpoked-Bikes/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -181,6 +181,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Your Name - [E-Mail](dean7496@gmail.com) - email@example.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/Deano7496/BeSpoked-Bikes](https://github.com/Deano7496/BeSpoked-Bikes)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
