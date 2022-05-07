@@ -6,7 +6,7 @@ const pool = require('./database');
   const getSales = (request, response) => {
     pool.query('SELECT DISTINCT * FROM sales ORDER BY product', (error, results) => {
       if (error) {
-        throw error
+        return console.error('Error executing query', error.stack)
       }
       response.status(200).json(results.rows)
     })
@@ -17,7 +17,7 @@ const pool = require('./database');
   
     pool.query('INSERT INTO sales (product, salesperson, customer, sales_date) VALUES ($1, $2, $3, $4) RETURNING *', [product, salesperson, customer, sales_date], (error, results) => {
       if (error) {
-        throw error
+        return console.error('Error executing query', error.stack)
       }
       response.status(201).send(`New sale created with ID: ${results.insertId}`)
     })
@@ -26,7 +26,7 @@ const pool = require('./database');
   const salesReport = (request, response) => {
     pool.query('SELECT * FROM sales_report ORDER BY employee_id', (error, results) => {
       if (error) {
-        throw error
+        return console.error('Error executing query', error.stack)
       }
       response.status(201).json(results.rows)
     })
@@ -38,7 +38,7 @@ const pool = require('./database');
   
     pool.query('INSERT INTO sales_report VALUES ($1, $2, $3, $4) RETURNING *', [employee_id, total_sales, commission, total_bonus], (error, results) => {
       if (error) {
-        throw error
+        return console.error('Error executing query', error.stack)
       }
       response.status(201).send(`New sale created with ID: ${results.InsertEmployee_id}`)
     })

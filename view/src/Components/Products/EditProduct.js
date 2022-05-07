@@ -22,6 +22,7 @@ const EditEmployee = ({ products }) => {
       } );
       console.log(response)
     } catch (error) {
+      window.alert('Product already exists')
       console.error(error.message)
     }
   }
