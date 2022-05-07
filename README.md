@@ -2,8 +2,8 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/Deano7496/BeSpoked-Bikes">
+    <img src="view/src/images/bespokedLogo.jpeg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">BeSpoked Bikes</h3>
@@ -96,8 +96,6 @@ This is an example of how to list things you need to use the software and how to
   ```
 
 ### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
 1. Get a free API Key at [http://heroku.com/](http://heroku.com/)
 2. Clone the repo
