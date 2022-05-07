@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Fragment} from 'react'
+import { HashLink } from 'react-router-hash-link';
 import EditProduct from './EditProduct';
 import { FaFilter } from 'react-icons/fa';
 import Nav from '../Nav/Nav';
@@ -77,7 +78,6 @@ const searchDiscounts = (searchValue) => {
     <Nav />
     <div className="container">
   <h2>Products</h2>
-
     <div className='search' style={{ padding: 10, display: 'inline-block' }}>
             <FaFilter /> <input 
                 type='text'

@@ -17,7 +17,7 @@ function App() {
        <Route exact path="/customers" element={<CustomerData />}/>
        <Route exact path="/sales" element={<SalesData />}/>
        <Route exact path="/salesreport" element={<SalesReportData />}/>
-       </Routes>
+    </Routes>
    </Router>
     
   );

@@ -57,10 +57,12 @@ function SalesData() {
  
     <thead>
       <tr>
-        <th>Product ID</th>
+        <th>Product</th>
         <th>Sales Person</th>
-        <th>Customer</th>
         <th>Sales Date</th>
+        <th>Customer</th>
+        <th>Price</th>
+        <th>Quantity</th>
       </tr>
     </thead> 
     
@@ -72,8 +74,10 @@ function SalesData() {
        
                           <td>{sales.product}</td>
                           <td>{sales.salesperson}</td>
-                          <td>{sales.customer}</td>
                           <td>{sales.sales_date}</td>
+                          <td>{sales.customer_name}</td>
+                          <td>{sales.purchase_price}</td>
+                          <td>{sales.qty_sold}</td>
                           </tr>
                         )
                     })
@@ -82,10 +86,12 @@ function SalesData() {
          return (
       <tr>
        
-        <td>{sales.product}</td>
-        <td>{sales.salesperson}</td>
-        <td>{sales.customer}</td>
-        <td>{sales.sales_date}</td>
+       <td>{sales.product}</td>
+                          <td>{sales.salesperson}</td>
+                          <td>{sales.sales_date}</td>
+                          <td>{sales.customer_name}</td>
+                          <td>{sales.purchase_price}</td>
+                          <td>{sales.qty_sold}</td>
         </tr> 
         
           )

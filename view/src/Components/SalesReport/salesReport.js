@@ -67,6 +67,7 @@ function SalesReportData() {
     <thead>
       <tr>
         <th>Employee ID</th>
+        <th>Employee Name</th>
         <th>Total Sales</th>
         <th>Commission</th>
         <th>Total Bonus</th>
@@ -80,9 +81,9 @@ function SalesReportData() {
                           <tr>
        
                           <td>{sales_report.employee_id}</td>
+                          <td>{sales_report.employee_name}</td>
                           <td>{sales_report.total_sales}</td>
                           <td>{sales_report.commission}%</td>
-                          <td>{sales_report.total_bonus}</td>
                           <td>{sales_report.total_bonus}</td>
                       
                           </tr>
@@ -94,6 +95,7 @@ function SalesReportData() {
             <tr>
        
                           <td>{sales_report.employee_id}</td>
+                          <td>{sales_report.employee_name}</td>
                           <td>{sales_report.total_sales}</td>
                           <td>{sales_report.commission}%</td>
                           <td>{sales_report.total_bonus}</td>

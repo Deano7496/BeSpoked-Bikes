@@ -4,15 +4,17 @@ import React, { Fragment, useState } from 'react';
 const NewSale = ({ sales }) => {
   const [product, setProduct] = useState(sales.product);
   const [salesperson, setSalesperson] = useState(sales.salesperson);
-  const [customer, setCustomer] = useState(sales.customer);
+  const [customer_name, setCustomer] = useState(sales.customer_name);
   const [sales_date, setSalesDate] = useState(sales.sales_date);
+  const [purchase_price, setPurchasePrice] = useState(sales.purchase_price);
+  const [qty_sold, setQtySold] = useState(sales.qty_sold);
   
 
 // function used to create a new sale with api
   const createSale = async (e) => {
     e.preventDefault();
     try {
-      const body = {product, salesperson, customer, sales_date}
+      const body = {product, salesperson, sales_date, customer_name, purchase_price, qty_sold}
       const response = await fetch(`http://localhost:3001/api/sales`, {
         method: 'POST',
         headers: {"Content-Type": "application/json" },
@@ -40,20 +42,28 @@ const NewSale = ({ sales }) => {
         </div>
         <div className="modal-body">
           <label style={{margin: 8}}>
-           Product ID
-            <input type='number' className='form-control' value={product} onChange={e => setProduct(e.target.value)}/>
+           Product Name
+            <input type='text' className='form-control' value={product} onChange={e => setProduct(e.target.value)}/>
             </label>
             <label style={{margin: 8}}>
             Sales Person
             <input type='text' className='form-control' value={salesperson} onChange={e => setSalesperson(e.target.value)}/>
             </label>
             <label style={{margin: 8}}>
-            Customer
-            <input type='text' className='form-control' value={customer} onChange={e => setCustomer(e.target.value)}/>
+            Sales Date
+            <input type='date' className='form-control' value={sales_date} onChange={e => setSalesDate(e.target.value)}/>
             </label>
             <label style={{margin: 8}}>
-              Sales Date
-            <input type='date' className='form-control' value={sales_date} onChange={e => setSalesDate(e.target.value)}/>
+              Customer
+            <input type='text' className='form-control' value={customer_name} onChange={e => setCustomer(e.target.value)}/>
+            </label>
+            <label style={{margin: 8}}>
+             Price
+            <input type='money' className='form-control' value={purchase_price} onChange={e => setPurchasePrice(e.target.value)}/>
+            </label>
+            <label style={{margin: 8}}>
+              Quantity Sold
+            <input type='number' className='form-control' value={qty_sold} onChange={e => setQtySold(e.target.value)}/>
             </label>
            
         </div>
