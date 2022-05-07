@@ -8,7 +8,7 @@ const pool = require('./database');
   
     pool.query('SELECT * FROM salesperson WHERE employee_id = $1', [id], (error, results) => {
       if (error) {
-        throw error
+        return console.error('Error executing query', error.stack)
       }
       response.status(200).json(results.rows)
     })
@@ -17,7 +17,7 @@ const pool = require('./database');
   const getAllSalesPeople = (request, response) => {
     pool.query('SELECT * FROM salesperson ORDER BY employee_id', (error, results) => {
       if (error) {
-        throw error
+        return console.error('Error executing query', error.stack)
       }
       response.status(200).json(results.rows)
     })
@@ -33,7 +33,7 @@ const updateSalesperson = (request, response) => {
     [first_name, last_name, address, phone, start_date, termination_date, manager, id],
     (error, results) => {
       if (error) {
-        throw error
+        return console.error('Error executing query', error.stack)
       }
       response.status(200).send(`Employee modified with ID: ${id}`)
     }
