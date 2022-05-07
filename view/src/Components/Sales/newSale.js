@@ -39,19 +39,19 @@ const NewSale = ({ sales }) => {
           <button type="button" className="close" data-bs-dismiss="modal">X</button>
         </div>
         <div className="modal-body">
-          <label>
+          <label style={{margin: 8}}>
            Product ID
             <input type='number' className='form-control' value={product} onChange={e => setProduct(e.target.value)}/>
             </label>
-            <label>
+            <label style={{margin: 8}}>
             Sales Person
             <input type='text' className='form-control' value={salesperson} onChange={e => setSalesperson(e.target.value)}/>
             </label>
-            <label>
+            <label style={{margin: 8}}>
             Customer
             <input type='text' className='form-control' value={customer} onChange={e => setCustomer(e.target.value)}/>
             </label>
-            <label>
+            <label style={{margin: 8}}>
               Sales Date
             <input type='date' className='form-control' value={sales_date} onChange={e => setSalesDate(e.target.value)}/>
             </label>

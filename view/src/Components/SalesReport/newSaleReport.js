@@ -39,19 +39,19 @@ const NewSaleReport = ({ sales_report }) => {
           <button type="button" className="close" data-bs-dismiss="modal"></button>
         </div>
         <div className="modal-body">
-          <label>
+          <label style={{margin: 8}}>
            Employee ID
             <input type='number' className='form-control' value={employee_id} onChange={e => setEmployeeId(e.target.value)}/>
             </label>
-            <label>
+            <label style={{margin: 8}}>
             Total Sales
             <input type='money' className='form-control' value={total_sales} onChange={e => setTotalSales(e.target.value)}/>
             </label>
-            <label>
+            <label style={{margin: 8}}>
             Commission
             <input type='int' className='form-control' value={commission} onChange={e => setCommission(e.target.value)}/>
             </label>
-            <label>
+            <label style={{margin: 8}}>
             Total Bonus
             <input type='money' className='form-control' value={total_bonus} onChange={e => setTotalBonus(e.target.value)}/>
             </label>
