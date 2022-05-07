@@ -31,11 +31,11 @@ const updateProduct = (request, response) => {
   pool.query(
     'UPDATE products SET name = $1, manufacturer = $2, style = $3, purchase_price = $4, sale_price = $5, qty_on_hand = $6, commission_percentage = $7 WHERE id = $8 RETURNING *',
     [name, manufacturer, style, purchase_price, sale_price, qty_on_hand, commission_percentage, id],
-    (err, results) => {
-      if (err) {
-        return console.error('Error executing query', err.stack)
+    (error, results) => {
+      if (error) { 
+        return console.error('Error executing query', error.stack)
       }
-      response.status(200).send(`Product modified with ID: ${id}`)
+      response.status(200).send(`Product modified with ID: ${results.insertId}`)
     }
   )
 }

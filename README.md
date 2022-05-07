@@ -138,13 +138,14 @@ _For more examples, please refer to the [Demo](https://be-spoked-bikes.vercel.ap
 - [x] Add CSS
 - [x] Complete Sales Report page
 - [x] Implement all features requested
-- [ ] Create a filter to filter date by range
+- [/] Create a filter to filter date by range
 - [ ] Fix bug when trying to add duplicate data
 - [ ] Improve CSS tailored to client
 - [ ] Add a login authentication system
     - [ ] Client login
     - [ ] Guest login
 - [ ] Improve SQL queries
+- [ ] Implement mobile friendly UI, for eg. (hamburger-menu)
 
 See the [open issues](https://github.com/Deano7496/BeSpoked-Bikes/issues) for a full list of proposed features (and known issues).
 

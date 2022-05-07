@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';  
+import React, { Fragment, useState, useEffect } from 'react';  
 
 // Make sure to use props as argument
 const EditEmployee = ({ products }) => {
@@ -21,11 +21,11 @@ const EditEmployee = ({ products }) => {
         body: JSON.stringify(body)
       } );
       console.log(response)
-    } catch (error) {
-      window.alert('Product already exists')
-      console.error(error.message)
+    } catch (err) {
+      return alert('Duplicate product not allowed')
     }
-  }
+  } 
+
 
   return (
     <Fragment>

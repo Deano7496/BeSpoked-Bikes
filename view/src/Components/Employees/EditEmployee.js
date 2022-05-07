@@ -11,6 +11,7 @@ const EditProduct = ({ salesperson }) => {
   const [termination_date, setTerminationDate] = useState(salesperson.termination_date);
   const [manager, setManager] = useState(salesperson.manager);
 
+
 // Update Employee function
   const updateEmployee = async (e) => {
     e.preventDefault();

@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import EditEmployee from './EditEmployee';
+import { FaFilter } from 'react-icons/fa';
+import Nav from '../Nav/Nav';
 
 function EmployeeData() {
   const [salesperson, setSalesperson] = useState([]);
@@ -22,6 +24,7 @@ function EmployeeData() {
 }
   
 // function to fetch all employees from api
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchEmployees = async () => {
     await fetch('http://localhost:3001/api/employees')
     .then(response => {
@@ -35,16 +38,18 @@ function EmployeeData() {
 
   useEffect(() => {
     fetchEmployees();
-  }, []);
+  }, [fetchEmployees]);
 
   return (
+    <Fragment>
+      <Nav />
     <div className="container">
   <h2>Employees</h2>
 
   <div className='search' style={{ padding: 10, display: 'inline-block' }}>
-            <input 
+            <FaFilter /> <input 
                 type='text'
-                placeholder='Search...'
+                placeholder='Filter...'
                 onChange={(e) => searchItems(e.target.value)}
             />
     </div>          
@@ -105,6 +110,8 @@ function EmployeeData() {
   </table>
   
 </div>
+
+</Fragment>
   )
 }
 

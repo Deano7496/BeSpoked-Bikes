@@ -1,4 +1,4 @@
-const { query } = require('express');
+const { query, response } = require('express');
 const pool = require('./database');
 
 // All SQL injection queries for sales table in Postgres
@@ -32,6 +32,18 @@ const pool = require('./database');
     })
   }
 
+  const totalBonus = (request, response) => {
+    pool.query('SELECT ((total_sales)*commission/100) AS total_bonus FROM sales_report',
+    (err, results) => {
+      if (err) {
+      return console.error('Error executing query', err.stack)
+      }
+      response.status(201).json(results.rows)
+    }
+    
+    )
+  }
+
   // Query for sales_report table in Postgres
   const newSaleReportRecord = (request, response) => {
     const { employee_id, total_sales, commission, total_bonus } = request.body
@@ -48,5 +60,6 @@ module.exports = {
   getSales,
   newSale,
   salesReport,
-  newSaleReportRecord
+  newSaleReportRecord,
+  totalBonus
 };

@@ -1,5 +1,7 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect, Fragment} from 'react'
 import EditProduct from './EditProduct';
+import { FaFilter } from 'react-icons/fa';
+import Nav from '../Nav/Nav';
 
 const Products = () => {
     const [products, setProducts] = useState([]);
@@ -39,7 +41,9 @@ const searchDiscounts = (searchValue) => {
 }
     
 // function used to fetch all product data from api
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const fetchProducts = async () => {
+      
       await fetch('http://localhost:3001/api/products')
       .then(response => {
         return response.json()
@@ -50,6 +54,7 @@ const searchDiscounts = (searchValue) => {
     }
      // function used to fetch all discount data from api
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const fetchDiscounts = async () => {
       await fetch('http://localhost:3001/api/discounts')
       .then(response => {
@@ -65,17 +70,18 @@ const searchDiscounts = (searchValue) => {
     useEffect(() => {
       fetchProducts();
       fetchDiscounts();
-    }, []);
-    
+    }, [fetchProducts]);
     
   return (
+    <Fragment>
+    <Nav />
     <div className="container">
   <h2>Products</h2>
 
     <div className='search' style={{ padding: 10, display: 'inline-block' }}>
-            <input 
+            <FaFilter /> <input 
                 type='text'
-                placeholder='Search...'
+                placeholder='Filter...'
                 onChange={(e) => searchProducts(e.target.value)}
             />
     </div>        
@@ -180,6 +186,8 @@ const searchDiscounts = (searchValue) => {
   </table>
   
 </div>
+
+</Fragment>
 
   )
 }

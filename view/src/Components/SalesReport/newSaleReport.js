@@ -1,4 +1,5 @@
-import React, { Fragment, useState } from 'react';  
+import React, { Fragment, useState } from 'react';
+import fetchSales from'./salesReport';
 
 // Dont forget to use props
 const NewSaleReport = ({ sales_report }) => {
@@ -6,6 +7,7 @@ const NewSaleReport = ({ sales_report }) => {
   const [total_sales, setTotalSales] = useState(sales_report.total_sales);
   const [commission, setCommission] = useState(sales_report.commission);
   const [total_bonus, setTotalBonus] = useState(sales_report.total_bonus);
+
   
 
 // function used to create a new sales report
@@ -19,9 +21,11 @@ const NewSaleReport = ({ sales_report }) => {
         body: JSON.stringify(body)
       } );
       console.log(response)
+      
     } catch (error) {
       console.error(error.message)
     }
+    
   }
 
   return (
@@ -36,7 +40,7 @@ const NewSaleReport = ({ sales_report }) => {
       <div className="modal-content">
         <div className="modal-header">
           <h4 className="modal-title">Sales Report</h4>
-          <button type="button" className="close" data-bs-dismiss="modal"></button>
+          <button type="button" className="close" data-bs-dismiss="modal">X</button>
         </div>
         <div className="modal-body">
           <label style={{margin: 8}}>

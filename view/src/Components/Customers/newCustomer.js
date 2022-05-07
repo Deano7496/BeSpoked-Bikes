@@ -30,7 +30,7 @@ const NewCustomer = ({ customers }) => {
   return (
     <Fragment>
       <div className="container">
-  <button type="button"  className="btn btn-info" data-bs-toggle="modal" data-bs-target='#myModal'>
+  <button type="button"  className="btn btn-outline-info" data-bs-toggle="modal" data-bs-target='#myModal'>
     New Customer
   </button>
   <form type="submit"> 

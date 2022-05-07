@@ -27,7 +27,7 @@ const NewSale = ({ sales }) => {
   return (
     <Fragment>
       <div className="container">
-  <button type="button" className="btn btn-info" data-bs-toggle="modal" data-bs-target='#myModal'>
+  <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target='#myModal'>
     New Sale
   </button>
   <form type="submit"> 

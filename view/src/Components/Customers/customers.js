@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 import NewCustomer from './newCustomer';
+import { FaFilter } from 'react-icons/fa';
+import Nav from '../Nav/Nav';
 
 function CustomerData() {
   const [customers, setCustomers] = useState([]);
@@ -22,6 +24,7 @@ function CustomerData() {
 }
   
 // function used to fetch all customer data from api
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchCustomers = async () => {
     await fetch('http://localhost:3001/api/customers')
     .then(response => {
@@ -35,16 +38,18 @@ function CustomerData() {
 
   useEffect(() => {
     fetchCustomers();
-  }, []);
+  }, [fetchCustomers]);
 
   return (
+    <Fragment>
+      <Nav /> 
     <div className="container">
   <h2>Customers</h2>
 
     <div className='search' style={{ padding: 10, display: 'inline-block' }}>
-            <input 
+            <FaFilter/> <input 
                 type='text'
-                placeholder='Search...'
+                placeholder='Filter...'
                 onChange={(e) => searchItems(e.target.value)}
             /> 
               
@@ -98,6 +103,8 @@ function CustomerData() {
     </tbody>
   </table>
 </div>
+
+</Fragment>
   )
 }
 

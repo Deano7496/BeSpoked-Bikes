@@ -1,5 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import NewSaleReport from './newSaleReport';
+import { FaFilter } from 'react-icons/fa';
+import Nav from '../Nav/Nav';
 
 function SalesReportData() {
   const [sales_report, setSalesReport] = useState([]);
@@ -11,8 +13,8 @@ function SalesReportData() {
   const searchItems = (searchValue) => {
     setSearchInput(searchValue)
     if (searchInput !== '') {
-        const filteredData = sales_report.filter((sales) => {
-            return Object.values(sales).join('').toLowerCase().includes(searchInput.toLowerCase())
+        const filteredData = sales_report.filter((sales_report) => {
+            return Object.values(sales_report).join('').toLowerCase().includes(searchInput.toLowerCase())
         })
         setFilteredResults(filteredData)
     }
@@ -22,7 +24,8 @@ function SalesReportData() {
 }
 
 // fetch all sales data from api
-  const fetchSales = async () => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const fetchSalesReport = async () => {
     await fetch('http://localhost:3001/api/salesreport')
     .then(response => {
       return response.json()
@@ -32,19 +35,30 @@ function SalesReportData() {
     })
   }
 
+/*   const totalBonus = async() => {
+      await fetch('http://localhost:3001/salesreport/bonus')
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        setBonus(data)
+      })
+  } */
+
 
   useEffect(() => {
-    fetchSales();
-  }, []);
+    fetchSalesReport(); 
+  }, [fetchSalesReport]);
 
   return (
     <Fragment>
+      <Nav />
     <div className="container">
   <h2>Quarterly Sales Report</h2>
     <div className='search' style={{ padding: 10, display: 'inline-block' }}>
-            <input 
+            <FaFilter /> <input 
                 type='text'
-                placeholder='Search...'
+                placeholder='Filter...'
                 onChange={(e) => searchItems(e.target.value)}
             />
     </div>          
@@ -69,6 +83,8 @@ function SalesReportData() {
                           <td>{sales_report.total_sales}</td>
                           <td>{sales_report.commission}%</td>
                           <td>{sales_report.total_bonus}</td>
+                          <td>{sales_report.total_bonus}</td>
+                      
                           </tr>
                         )
                     })
@@ -81,6 +97,7 @@ function SalesReportData() {
                           <td>{sales_report.total_sales}</td>
                           <td>{sales_report.commission}%</td>
                           <td>{sales_report.total_bonus}</td>
+    
                           </tr>
         
           )

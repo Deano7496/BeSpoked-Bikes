@@ -1,5 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import NewSale from './newSale';
+import { FaFilter } from 'react-icons/fa';
+import Nav from '../Nav/Nav';
 
 function SalesData() {
   const [sales, setSales] = useState([]);
@@ -22,6 +24,7 @@ function SalesData() {
 }
 
 // function used to fetch all sales data from api
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchSales = async () => {
     await fetch('http://localhost:3001/api/sales')
     .then(response => {
@@ -35,16 +38,18 @@ function SalesData() {
 
   useEffect(() => {
     fetchSales();
-  }, []);
+  }, [fetchSales]);
 
   return (
-    <Fragment>
+   
+    <Fragment> 
+    <Nav />
     <div className="container">
   <h2>Sales</h2>
     <div className='search' style={{ padding: 10, display: 'inline-block' }}>
-            <input 
+            <FaFilter /> <input 
                 type='text'
-                placeholder='Search...'
+                placeholder='Filter...'
                 onChange={(e) => searchItems(e.target.value)}
             />
     </div>          
