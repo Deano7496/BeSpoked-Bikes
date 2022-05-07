@@ -3,7 +3,7 @@ import Products from "./Components/Products/products";
 import { BrowserRouter as Router, Routes, Route, Link, useSearchParams } from 'react-router-dom';
 import EmployeeData from "./Components/Employees/employees";
 import CustomerData from "./Components/Customers/customers";
-import Logo from './images/bespokedLogo.jpeg'
+import Logo from './images/bespokedLogo.png'
 import './App.css';
 import SalesData from "./Components/Sales/sales";
 import SalesReportData from "./Components/SalesReport/salesReport";
