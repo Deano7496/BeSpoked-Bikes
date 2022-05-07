@@ -117,6 +117,7 @@ This is an example of how to list things you need to use the software and how to
 5. Alternatively you could use PROCESS.ENV, whichever you prefer.
 
 6. Make sure all table names in postgres match the queries in the project, or change it to tailor your database.
+7. Install all appropriate dependencies, including adding certain bootstrap code in the 'public/html' file in src.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
