@@ -1,0 +1,15 @@
+{
+  "name": "bespoked-bikes",
+  "version": "1.0.0",
+  "description": "sales tracking app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --ignore ./view"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}

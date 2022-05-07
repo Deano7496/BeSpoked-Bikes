@@ -1,0 +1,99 @@
+import React, { useState, useEffect, Fragment } from 'react'
+import NewSale from './newSale';
+
+function SalesData() {
+  const [sales, setSales] = useState([]);
+  const [error, setError] = useState();
+  const [filteredResults, setFilteredResults] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
+  
+// function used to map and filter sales data
+  const searchItems = (searchValue) => {
+    setSearchInput(searchValue)
+    if (searchInput !== '') {
+        const filteredData = sales.filter((sales) => {
+            return Object.values(sales).join('').toLowerCase().includes(searchInput.toLowerCase())
+        })
+        setFilteredResults(filteredData)
+    }
+    else{
+        setFilteredResults(sales)
+    }
+}
+
+// function used to fetch all sales data from api
+  const fetchSales = async () => {
+    await fetch('http://localhost:3001/api/sales')
+    .then(response => {
+      return response.json()
+    })
+    .then(data => {
+      setSales(data)
+    })
+  }
+
+
+  useEffect(() => {
+    fetchSales();
+  }, []);
+
+  return (
+    <Fragment>
+    <div className="container">
+  <h2>Sales</h2>
+    <div className='search' style={{ padding: 10, display: 'inline-block' }}>
+            <input 
+                type='text'
+                placeholder='Search...'
+                onChange={(e) => searchItems(e.target.value)}
+            />
+    </div>          
+  <table className="table table-bordered"> 
+ 
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Sales Person</th>
+        <th>Customer</th>
+        <th>Sales Date</th>
+      </tr>
+    </thead> 
+    
+    <tbody>
+    {searchInput.length > 1 ? (
+                    filteredResults.map((sales) => {
+                        return (
+                          <tr>
+       
+                          <td>{sales.product}</td>
+                          <td>{sales.salesperson}</td>
+                          <td>{sales.customer}</td>
+                          <td>{sales.sales_date}</td>
+                          </tr>
+                        )
+                    })
+                ) : (
+         sales.map((sales) => {
+         return (
+      <tr>
+       
+        <td>{sales.product}</td>
+        <td>{sales.salesperson}</td>
+        <td>{sales.customer}</td>
+        <td>{sales.sales_date}</td>
+        </tr> 
+        
+          )
+        })
+      )}
+    
+    </tbody> 
+   
+  </table>
+        <NewSale sales={sales} key={sales} />
+</div>
+</Fragment>
+  )
+}
+
+export default SalesData;
