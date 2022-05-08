@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Deano7496/BeSpoked-Bikes">
-    <img src="view/src/images/bespokedLogo.jpeg" alt="Logo" width="80" height="80">
+    <img src="view/public/bespokedLogo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">BeSpoked Bikes</h3>
