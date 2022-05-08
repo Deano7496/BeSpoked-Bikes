@@ -1,5 +1,5 @@
 const express = require('express');
-const { newSale, getSales,newSaleReportRecord, salesReport, totalBonus } = require('../model/sales');
+const { newSale, getSales,newSaleReportRecord, salesReport, totalBonus, updateSalesReport } = require('../model/sales');
 
 const router = express.Router();
 
@@ -11,6 +11,7 @@ router.post('/sales', newSale);
 router.get('/salesreport', salesReport);
 router.post('/salesreport', newSaleReportRecord);
 router.get('/salesreport/bonus', totalBonus);
+router.put('/salesreport/:id', updateSalesReport)
 
 
 module.exports = router;

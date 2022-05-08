@@ -1,5 +1,4 @@
 import React, { useState, useEffect, Fragment} from 'react'
-import { HashLink } from 'react-router-hash-link';
 import EditProduct from './EditProduct';
 import { FaFilter } from 'react-icons/fa';
 import Nav from '../Nav/Nav';

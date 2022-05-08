@@ -1,4 +1,4 @@
-const { query, response } = require('express');
+const { query, response, request } = require('express');
 const pool = require('./database');
 
 // All SQL injection queries for sales table in Postgres
@@ -11,7 +11,6 @@ const pool = require('./database');
       response.status(200).json(results.rows)
     })
   }
-
   const newSale = (request, response) => {
     const { product, salesperson, sales_date, customer_name, purchase_price, qty_sold  } = request.body
   
@@ -24,8 +23,25 @@ const pool = require('./database');
     })
   }
 
+
+
+
+
+
+  // Query for sales_report table in Postgres
+  const newSaleReportRecord = (request, response) => {
+    const { id, employee_name, total_sales, commission} = request.body
+  
+    pool.query('INSERT INTO sales_report VALUES ($1, $2, $3, $4) ORDER BY id RETURNING *', [id, employee_name, total_sales, commission], (error, results) => {
+      if (error) {
+        return console.error('Error executing query', error.stack)
+      }
+      response.status(201).send(`New sale created with ID: ${results.InsertEmployee_id}`)
+    })
+  }  
+  
   const salesReport = (request, response) => {
-    pool.query('SELECT * FROM sales_report ORDER BY employee_id', (error, results) => {
+    pool.query('SELECT * FROM sales_report ORDER BY id', (error, results) => {
       if (error) {
         return console.error('Error executing query', error.stack)
       }
@@ -34,7 +50,7 @@ const pool = require('./database');
   }
 
   const totalBonus = (request, response) => {
-    pool.query('SELECT ((total_sales)*commission/100) AS total_bonus FROM sales_report',
+    pool.query('SELECT id, employee_name, ((total_sales)*commission/100) AS total_bonus FROM sales_report ORDER BY id',
     (err, results) => {
       if (err) {
       return console.error('Error executing query', err.stack)
@@ -45,16 +61,20 @@ const pool = require('./database');
     )
   }
 
-  // Query for sales_report table in Postgres
-  const newSaleReportRecord = (request, response) => {
-    const { employee_id, employee_name, total_sales, commission, total_bonus } = request.body
+  const updateSalesReport = (request, response) => {
+    const id = parseInt(request.params.id)
+    const { employee_name, total_sales, commission } = request.body
   
-    pool.query('INSERT INTO sales_report VALUES ($1, $2, $3, $4, $5) RETURNING *', [employee_id, employee_name, total_sales, commission, total_bonus], (error, results) => {
-      if (error) {
-        return console.error('Error executing query', error.stack)
+    pool.query(
+      'UPDATE sales_report SET employee_name = $1, total_sales = $2, commission = $3 WHERE id = $4 RETURNING *',
+      [employee_name, total_sales, commission, id],
+      (error, results) => {
+        if (error) { 
+          return console.error('Error executing query', error.stack)
+        }
+        response.status(200).send(`Product modified with ID: ${results.insertId}`)
       }
-      response.status(201).send(`New sale created with ID: ${results.InsertEmployee_id}`)
-    })
+    )
   }
 
 module.exports = {
@@ -62,5 +82,6 @@ module.exports = {
   newSale,
   salesReport,
   newSaleReportRecord,
-  totalBonus
+  totalBonus,
+  updateSalesReport
 };

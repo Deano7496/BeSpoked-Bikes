@@ -45,9 +45,18 @@ const NewSale = ({ sales }) => {
            Product Name
             <input type='text' className='form-control' value={product} onChange={e => setProduct(e.target.value)}/>
             </label>
-            <label style={{margin: 8}}>
+            <label style={{margin: 8}} title='Sales Person'>
             Sales Person
-            <input type='text' className='form-control' value={salesperson} onChange={e => setSalesperson(e.target.value)}/>
+              <select>
+           {sales.map(sales => (
+            
+               <option value={salesperson} onChange={e => setSalesperson(e.target.value)}>
+                 {sales.salesperson}
+                </option>
+           
+                ))} 
+                </select>
+               
             </label>
             <label style={{margin: 8}}>
             Sales Date

@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';  
 
 // Make sure to use props as argument
-const EditEmployee = ({ products }) => {
+const EditProduct = ({ products }) => {
   const [name, setName] = useState(products.name);
   const [manufacturer, setManufacturer] = useState(products.manufacturer);
   const [style, setStyle] = useState(products.style);
@@ -93,4 +93,4 @@ const EditEmployee = ({ products }) => {
   )
 }
 
-export default EditEmployee;
+export default EditProduct;

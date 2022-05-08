@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import './editEmployee.css';
 
 //Make sure to use props as argument
-const EditProduct = ({ salesperson }) => {
+const EditEmployee = ({ salesperson }) => {
   const [first_name, setFirstName] = useState(salesperson.first_name);
   const [last_name, setLastName] = useState(salesperson.last_name);
   const [address, setAddress] = useState(salesperson.address);
@@ -94,4 +94,4 @@ const EditProduct = ({ salesperson }) => {
   )
 }
 
-export default EditProduct;
+export default EditEmployee;
