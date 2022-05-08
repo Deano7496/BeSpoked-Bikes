@@ -14,7 +14,6 @@
     <a href="https://github.com/Deano7496/BeSpoked-Bikes/blob/main/README.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://be-spoked-bikes.vercel.app/">View Demo</a>
     ·
     <a href="https://github.com/Deano7496/BeSpoked-Bikes/issues">Report Bug</a>
     ·
@@ -109,10 +108,10 @@ This is an example of how to list things you need to use the software and how to
 4. Enter your API in `database.js`
    ```js
    user: "Your Postgres user name",
-  host: "Your Postgres host",
-  database: "Your postgres database",
-  password: "Your Postgres password",
-  port: 'Your port'
+    host: "Your Postgres host",
+    database: "Your postgres database",
+    password: "Your Postgres password",
+    port: 'Your port'
    ```
 5. Alternatively you could use PROCESS.ENV, whichever you prefer.
 
@@ -127,7 +126,6 @@ This is an example of how to list things you need to use the software and how to
 
 This project is best used for clients who want to keep track of all their data in one database.
 
-_For more examples, please refer to the [Demo](https://be-spoked-bikes.vercel.app/)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
