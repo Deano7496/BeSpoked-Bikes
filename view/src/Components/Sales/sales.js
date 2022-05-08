@@ -52,7 +52,9 @@ function SalesData() {
                 placeholder='Filter...'
                 onChange={(e) => searchItems(e.target.value)}
             />
-    </div>          
+
+    </div> 
+    <NewSale sales={sales} key={sales} />         
   <table className="table table-bordered"> 
  
     <thead>
@@ -101,7 +103,7 @@ function SalesData() {
     </tbody> 
    
   </table>
-        <NewSale sales={sales} key={sales} />
+       
 </div>
 </Fragment>
   )
