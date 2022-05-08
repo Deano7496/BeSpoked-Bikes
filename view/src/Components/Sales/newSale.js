@@ -46,7 +46,7 @@ const NewSale = ({ sales }) => {
             <input type='text' className='form-control' value={product} onChange={e => setProduct(e.target.value)}/>
             </label>
             <label style={{margin: 8}} title='Sales Person'>
-            Sales Person
+            Sales Person {(' ')}
               <select>
            {sales.map(sales => (
             
