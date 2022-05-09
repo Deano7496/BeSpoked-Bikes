@@ -117,6 +117,9 @@ This is an example of how to list things you need to use the software and how to
 
 6. Make sure all table names in postgres match the queries in the project, or change it to tailor your database.
 7. Install all appropriate dependencies, including adding certain bootstrap code in the 'public/html' file in src.
+8. npm start your front-end in the view directory
+9. 'node index.js' when in the initial directory, to get the server running
+10. I used 'nodemon' to constantly restart and run server on every change in code, this saves you time constantly going to terminal and restarting the server
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
