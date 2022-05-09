@@ -105,7 +105,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-4. Enter your API in `database.js`
+4. Enter your Postgres info in `database.js`
    ```js
    user: "Your Postgres user name",
     host: "Your Postgres host",
