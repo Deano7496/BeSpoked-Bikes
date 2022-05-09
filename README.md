@@ -181,7 +181,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name - [E-Mail](dean7496@gmail.com) - email@example.com
+Dean Foster - [dean7496@gmail.com](dean7496@gmail.com) - dean7496@gmail.com
 
 Project Link: [https://github.com/Deano7496/BeSpoked-Bikes](https://github.com/Deano7496/BeSpoked-Bikes)
 
